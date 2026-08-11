@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Security Essentials · PassCraft Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="security-essentials.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+    <img src="assets/images/passcraft-edu-logo.png" alt="PassCraft Education" class="logo-img">
+    <h1>Account <em>Security</em> Essentials</h1>
+    <p>Three quick skills to lock down any account: spotting phishing, choosing strong MFA, and checking for breaches.</p>
+  </header>
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="phishing">🎣 Phishing</button>
+    <button class="tab-btn" data-tab="mfa">🔐 MFA</button>
+    <button class="tab-btn" data-tab="breach">🕵️ Breach Check</button>
+  </nav>
+
+  <!-- ═══ PHISHING TAB ═══ -->
+  <section class="panel active" id="panel-phishing">
+    <div class="card">
+      <div class="section-label">Spot the Phish</div>
+
+      <div class="quiz-score-row">
+        <span id="quiz-question-count">Question 1 of 5</span>
+        <span id="quiz-score">Score: 0</span>
+      </div>
+      <div class="quiz-progress" id="quiz-progress"></div>
+
+      <div class="message-mockup">
+        <div class="msg-from" id="quiz-from">From: —</div>
+        <div class="msg-body" id="quiz-body">Loading…</div>
+      </div>
+
+      <div class="quiz-choice-row">
+        <button class="quiz-choice-btn" data-choice="safe">✅ Looks Safe</button>
+        <button class="quiz-choice-btn" data-choice="phish">🚩 It's Phishing</button>
+      </div>
+
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+
+      <button class="generate-btn" id="quiz-next-btn" style="display:none;">Next Question →</button>
+
+      <div class="tip-box" id="quiz-summary" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- ═══ MFA TAB ═══ -->
+  <section class="panel" id="panel-mfa">
+    <div class="card">
+      <div class="section-label">Choose Your Second Factor</div>
+
+      <div class="mfa-list" id="mfa-list"></div>
+
+      <div class="tip-box">
+        <strong>Rule of thumb:</strong> any MFA is better than none — even SMS codes stop the vast majority of automated account takeovers. Upgrade to an authenticator app or hardware key when you can, especially for email, banking, and any account used to recover others.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BREACH CHECK TAB ═══ -->
+  <section class="panel" id="panel-breach">
+    <div class="card">
+      <div class="section-label">Check a Password Against Known Breaches</div>
+
+      <div class="breach-input-row">
+        <input type="password" class="breach-input" id="breach-input" placeholder="Type a password to check…" autocomplete="off">
+        <button class="breach-check-btn" id="breach-check-btn">Check</button>
+      </div>
+
+      <div class="breach-result" id="breach-result"></div>
+
+      <div class="tip-box" style="margin-bottom:14px;">
+        <strong>This is a real, safe check.</strong> Your password never leaves your device. We hash it (SHA-1), send only the first 5 characters of that hash to the Have I Been Pwned API, and check the returned list locally. This is called <strong>k-anonymity</strong> — the same privacy trick used by real security tools.
+      </div>
+
+      <div class="breach-privacy-note">
+        <span>🔒</span>
+        <span>Tip: use a fake or old password here to try it — never test a password you're currently using anywhere, even though this check is safe.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Part of <a href="index.html">PassCraft Education</a>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="security-essentials.js"></script>
+</body>
+</html>
