@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════════
+   PASSCRAFT EDUCATION — Account Security Essentials
+   security-essentials.css
+   (extends style.css — same tokens, new components)
+═══════════════════════════════════════════════ */
+
+/* ── PHISHING QUIZ ── */
+.quiz-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.quiz-progress-dot {
+  flex: 1;
+  height: 5px;
+  border-radius: 99px;
+  background: var(--cream-dark);
+  transition: background .3s ease;
+}
+
+.quiz-progress-dot.done { background: var(--green-mid); }
+.quiz-progress-dot.current { background: var(--amber); }
+
+.message-mockup {
+  background: var(--cream);
+  border: 1.5px solid var(--cream-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+.message-mockup .msg-from {
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.message-mockup .msg-body {
+  color: var(--text-dark);
+}
+
+.message-mockup .msg-body .flagged {
+  background: rgba(224,159,62,.25);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.quiz-choice-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 480px) { .quiz-choice-row { grid-template-columns: 1fr; } }
+
+.quiz-choice-btn {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--cream-border);
+  background: var(--cream);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.quiz-choice-btn:hover { border-color: var(--green-light); background: #f5fdf8; }
+
+.quiz-choice-btn.correct {
+  border-color: var(--green-dark);
+  background: #e6f7ee;
+  color: var(--green-dark);
+}
+
+.quiz-choice-btn.incorrect {
+  border-color: var(--red);
+  background: var(--red-light);
+  color: var(--red);
+}
+
+.quiz-feedback {
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: .88rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct { background: #f0faf4; border: 1.5px solid var(--green-pale); color: var(--green-dark); }
+.quiz-feedback.incorrect { background: var(--red-light); border: 1.5px solid #f0b7ae; color: var(--red); }
+
+.quiz-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+/* ── MFA COMPARISON ── */
+.mfa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mfa-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--cream);
+  border: 1.5px solid var(--cream-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.mfa-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.mfa-item-body { flex: 1; min-width: 0; }
+
+.mfa-item-body h3 {
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin-bottom: 2px;
+}
+
+.mfa-item-body p {
+  font-size: .82rem;
+  color: var(--text-mid);
+  line-height: 1.45;
+}
+
+.mfa-strength {
+  flex-shrink: 0;
+  display: flex;
+  gap: 3px;
+}
+
+.mfa-strength .pip {
+  width: 8px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--cream-border);
+}
+
+.mfa-strength .pip.on { background: var(--green-mid); }
+
+/* ── BREACH CHECK ── */
+.breach-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.breach-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid var(--cream-border);
+  border-radius: var(--radius-md);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  outline: none;
+  transition: border-color .2s;
+}
+
+.breach-input:focus { border-color: var(--green-mid); }
+
+.breach-check-btn {
+  padding: 0 22px;
+  background: var(--green-dark);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.breach-check-btn:hover { background: var(--green-mid); }
+.breach-check-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.breach-result {
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  font-size: .92rem;
+  line-height: 1.55;
+  display: none;
+}
+
+.breach-result.show { display: block; }
+
+.breach-result.safe {
+  background: #f0faf4;
+  border: 1.5px solid var(--green-pale);
+  color: var(--green-dark);
+}
+
+.breach-result.exposed {
+  background: var(--red-light);
+  border: 1.5px solid #f0b7ae;
+  color: var(--red);
+}
+
+.breach-result.error {
+  background: var(--cream-dark);
+  border: 1.5px solid var(--cream-border);
+  color: var(--text-mid);
+}
+
+.breach-result strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+
+.breach-privacy-note {
+  font-size: .78rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
